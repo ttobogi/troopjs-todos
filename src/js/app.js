@@ -3,6 +3,11 @@ require({
 		"jquery" : "lib/jquery/dist/jquery",
 		"troopjs-bundle" : "lib/troopjs-bundle/dist/troopjs-bundle"
 	},
+	"map" : {
+		"*" : {
+			"template" : "troopjs-requirejs/template"
+		}
+	}
 }, [ "require", "jquery", "troopjs-bundle" ], function Deps(parentRequire, jQuery) {
 
 	// Application and plug-ins
@@ -15,7 +20,7 @@ require({
 
 		// Hook ready
 		jQuery(document).ready(function ready($) {
-			Application($(this.body), "app/todos").start();
+			Application($(this), "app/todos").start();
 		});
 	});
 });
